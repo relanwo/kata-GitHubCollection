@@ -29,49 +29,49 @@ function getApiData(value) {
 			})
 			.then((response) => {
 				const items = response.items;
-				const fragment = document.createDocumentFragment();
+				const searchFragment = document.createDocumentFragment();
 				items.forEach((item) => {
-					const element = document.createElement("li");
-					element.addEventListener("click", () => {
-						const element = document.createElement("li");
-						element.classList.add("repository");
+					const searchItem = document.createElement("li");
+					searchItem.classList.add("search__item");
+					searchItem.innerText = item.full_name;
+					searchFragment.appendChild(searchItem);
+
+					searchItem.addEventListener("click", () => {
+						const repositoryElement = document.createElement("li");
+						repositoryElement.classList.add("repository");
 
 						const name = document.createElement("p");
 						name.classList.add("repository__name");
 						name.innerText = `Name: ${item.name}`;
-						element.appendChild(name);
+						repositoryElement.appendChild(name);
 
 						const owner = document.createElement("p");
 						owner.classList.add("repository__owner");
 						owner.innerText = `Owner: ${item.owner.login}`;
-						element.appendChild(owner);
+						repositoryElement.appendChild(owner);
 
 						const stars = document.createElement("p");
 						stars.classList.add("repository__stars");
 						stars.innerText = `☆ ${item.stargazers_count}`;
-						element.appendChild(stars);
+						repositoryElement.appendChild(stars);
 
 						const cross = document.createElement("button");
 						cross.classList.add("repository__cross");
-						// cross.innerText = `${}`;
-						element.appendChild(cross);
+						repositoryElement.appendChild(cross);
 
 						cross.addEventListener("click", () => {
-							element.remove();
+							repositoryElement.remove();
 						});
 
-						repositoryList.appendChild(element);
+						repositoryList.appendChild(repositoryElement);
 						repositoryList.classList.add("open");
 
 						searchDropdown.innerHTML = "";
 						searchInput.value = "";
 					});
-					element.classList.add("search__item");
-					element.innerText = item.full_name;
-					fragment.appendChild(element);
 				});
 				searchDropdown.innerHTML = "";
-				searchDropdown.appendChild(fragment);
+				searchDropdown.appendChild(searchFragment);
 			});
 	} else {
 		searchDropdown.innerHTML = "";
