@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrap {
+	width: 500px;
+  padding: 3rem 0;
+	display: flex;
+	justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-size: 1.2rem;
+}
+
+$height: 46px;
+
+.search {
+  list-style: none;
+  width: 100%;
+  position: relative;
+  margin-bottom: 19rem;
+
+  &.open {
+    .search__dropdown {
+      display: block;
+    }
+
+    .search__input {
+      border-bottom: none;
+    }
+  }
+
+  &__input {
+    width: 93.5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: $height;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  &__dropdown {
+    display: none;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    font-size: 0.9rem;
+  }
+  
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none
+    }
+
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+      transition: .15s background-color ease-in;
+    }
+
+    &.selected {
+      background: #65CDF9;
+    }
+  }
+}
+ 
+.repository {
+    padding: 1rem;
+    border-bottom: 1px solid rgb(114, 113, 113);
+    cursor: pointer;
+    position: relative;
+
+    &:last-child {
+      border-bottom: none
+    }
+
+  &-list {
+    display: none;
+    width: 100%;
+    list-style: none;
+    border: 1px solid rgb(114, 113, 113);
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    &.open {
+      display: block;
+    }
+  }
+
+  &__cross {
+    position: absolute;
+    left: 430px;
+    top: 30px;
+    background: none;
+    border: none;
+    &:before {
+      content: url('./icons/cross.png');
+    }
+  }
+}
