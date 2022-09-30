@@ -119,5 +119,5 @@ body {
 }
 
 .repository__cross:before {
-	content: url("./icons/cross.png");
+	content: url("../icons/cross.png");
 }
