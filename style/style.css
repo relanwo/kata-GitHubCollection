@@ -87,14 +87,9 @@ body {
 }
 
 .search__message {
-	/* display: none; */
 	font-size: 14px;
 	margin: 6px;
 }
-
-/* .search__message .open {
-  display: block
-} */
 
 .repository {
 	padding: 1rem;
