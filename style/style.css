@@ -35,11 +35,11 @@ body {
 	display: block;
 }
 
-.search.open .search__input {
+.search.open #search__input {
 	border-bottom: none;
 }
 
-.search__input {
+#search__input {
 	width: 93.5%;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -69,6 +69,7 @@ body {
 	padding: 1rem;
 	border-bottom: 1px solid #ccc;
 	cursor: pointer;
+	/* background-color: white; */
 }
 
 .search__item:last-child {
@@ -84,6 +85,16 @@ body {
 .search__item.selected {
 	background: #65cdf9;
 }
+
+.search__message {
+	/* display: none; */
+	font-size: 14px;
+	margin: 6px;
+}
+
+/* .search__message .open {
+  display: block
+} */
 
 .repository {
 	padding: 1rem;
