@@ -1,5 +1,5 @@
 const search = document.querySelector(".search"),
-	searchInput = document.querySelector("#search__input"),
+  searchInput = document.querySelector("#search__input"),
 	searchDropdown = document.querySelector(".search__dropdown"),
 	searchMessage = document.querySelector(".search__message"),
 	repositoryList = document.querySelector(".repository-list"),
